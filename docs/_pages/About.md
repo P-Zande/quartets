@@ -8,8 +8,8 @@ layout: post
 
 # About
 
-This project was made by:
+This project was made by:  
 
-Lotte Bouma
-Rachelle Bouwens
-Perry van der Zande
+Lotte Bouma  
+Rachelle Bouwens  
+Perry van der Zande  
