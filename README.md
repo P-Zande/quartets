@@ -1,3 +1,3 @@
 # quartets
 
-Hi there!
+This is the general readme.
