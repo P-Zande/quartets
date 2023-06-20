@@ -11,11 +11,12 @@ Quartets is a card game which can be played by two or more people, where the obj
 
 
 ![Example of a quartet set](https://www.semmie.net//Files/7/113000/113715/ProductPhotos/1920x1080/360305641.jpg)
+*Figure 1: An example of a full quartet set*
 
-. The number of sets usually depends on the company that publishes the set. The game starts by giving each player 7 cards. The rest of the cards are made into the draw pile. Rules around who can start depend per household, sometimes the youngest player can start, sometimes the player left of the dealer. Each round is the same, which will be explained in the example below:
+The number of sets usually depends on the company that publishes the set. The game starts by giving each player 7 cards. The rest of the cards are made into the draw pile. Rules around who can start depend per household, sometimes the youngest player can start, sometimes the player left of the dealer. Each round is the same, which will be explained in the example below:
 
 For our example we have three players: Alice, Bob, and Charlie.
-It's Alice's turn, and she asks another player, in this case Bob, for a card by saying out loud: "Bob, do you have the card 'Blij' of the set 'Gevoelens'?" (See \autoref{fig:kwartet}). All players hear this statement. Alice is only allowed to ask Bob for a card from a certain set if she is in possession of at least one of the other cards of this set. Now two scenarios can happen:
+It's Alice's turn, and she asks another player, in this case Bob, for a card by saying out loud: "Bob, do you have the card 'Blij' of the set 'Gevoelens'?" (See Figure 1). All players hear this statement. Alice is only allowed to ask Bob for a card from a certain set if she is in possession of at least one of the other cards of this set. Now two scenarios can happen:
 * Bob is in possession of the ``Blij" card, and has to give it to Alice. Alice can now ask another question to either Bob or another player (Charlie).
 * Bob does not have the ``Blij" card. Now Alice has to draw a card from the draw pile and Bob (the person Alice asked the question to) can now start his turn.
 
