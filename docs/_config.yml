@@ -1,7 +1,10 @@
 # Configurations
 title:            Quartets
 longtitle:        Quartets
-author:           Perry van der Zande
+# author:           Perry van der Zande
+author:           Lotte Bouma  
+                  Rachelle Bouwens  
+                  Perry van der Zande  
 description: >
   A Quartets model
 
