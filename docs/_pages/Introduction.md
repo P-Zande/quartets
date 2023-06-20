@@ -13,7 +13,7 @@ For our project we are planning to model the card game quartets. This is a game 
 Quartets is a card game which can be played by two or more people, where the objective is to collect the most sets of four cards. These sets can be of any theme: animals, colours, people, etc. All cards show the names of the other three cards that belong to the set as well 
 
 
-![Example of a quartet set](https://github.com/P-Zande/quartets/blob/main/docs/_pages/kwartet1.jpg)
+![Example of a quartet set](/kwartet1.jpg)
 
 (see \autoref{fig:kwartet}, from \citet{Semmie}). The number of sets usually depends on the company that publishes the set. The game starts by giving each player 7 cards. The rest of the cards are made into the draw pile. Rules around who can start depend per household, sometimes the youngest player can start, sometimes the player left of the dealer. Each round is the same, which will be explained in the example below:
 
