@@ -7,7 +7,7 @@ layout: post
 permalink: /model
 ---
 
-# Dit moet nog in 'wat we hebben gedaan taal'
+# Dit moet nog in 'wat we hebben gedaan taal' (en er moet in wat we echt hebben gedaan)
 
 ## Game implementation
 As a visual representation of the game, we envision different agents sitting around a table, each holding their cards. All completed sets are shown on the table. To implement this, we want to create 'agent' objects that have their own knowledge about the game. All agents know of the existence of every card, but agents might not know where a certain card is at a certain point in time. Whenever a public announcement is made (in the form of an agent asking a question and the other agent responding), each agent on the table updates their knowledge about the location of each card.

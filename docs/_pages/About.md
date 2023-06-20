@@ -6,6 +6,7 @@ category: Jekyll
 layout: post
 ---
 
+# Ik wil deze pagina weghebbennnn
 
 This project was made by:  
 
