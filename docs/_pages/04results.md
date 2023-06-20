@@ -10,4 +10,4 @@ permalink: /results
 
 Test om te kijken of we plaatjes kunnen toevoegen:
 
-![Resultaten](assets/images/resultaten.jpg)
+![Resultaten](/assets/images/resultaten.jpg)
