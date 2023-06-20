@@ -6,7 +6,6 @@ category: Jekyll
 layout: post
 ---
 
-# About
 
 This project was made by:  
 
