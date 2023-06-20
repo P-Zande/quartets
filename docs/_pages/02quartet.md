@@ -10,7 +10,8 @@ permalink: /quartet
 Quartets is a card game which can be played by two or more people, where the objective is to collect the most sets of four cards. These sets can be of any theme: animals, colours, people, etc. All cards show the names of the other three cards that belong to the set as well:
 
 
-![Example of a quartet set](https://www.semmie.net//Files/7/113000/113715/ProductPhotos/1920x1080/360305641.jpg)
+<!-- ![Example of a quartet set](https://www.semmie.net//Files/7/113000/113715/ProductPhotos/1920x1080/360305641.jpg) -->
+![Example of a quartet set](assets/images/kwartet1.jpg)
 *Figure 1: An example of a full quartet set*
 
 The number of sets usually depends on the company that publishes the set. The game starts by giving each player 7 cards. The rest of the cards are made into the draw pile. Rules around who can start depend per household, sometimes the youngest player can start, sometimes the player left of the dealer. Each round is the same, which will be explained in the example below:
