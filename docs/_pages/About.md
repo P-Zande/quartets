@@ -1,5 +1,5 @@
 ---
-title: Introduction 
+title: About 
 author: Perry van der Zande
 date: 2023-06-19
 category: Jekyll
