@@ -7,5 +7,4 @@ layout: page
 permalink: /code
 ---
 
-HALLO DOET DEZE PAGINA HET WEL???
-{% include button.html url="https://github.com/P-Zande/quartets" %}
+HALLO DOET DEZE PAGINA HET WEL??? nee dus.
