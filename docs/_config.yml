@@ -2,9 +2,12 @@
 title:            Quartets
 longtitle:        Quartets
 # author:           Perry van der Zande
-author:           "Lotte Bouma (s3824853) <br> Rachelle Bouwens (s3661393) <br> Perry van der Zande (s3679799)" 
+author: >
+  Lotte Bouma (s3824853) <br> 
+  Rachelle Bouwens (s3661393) <br> 
+  Perry van der Zande (s3679799)
 description: >
-  A Quartets model
+  A Quartets model for LAMAS
 
 version:          1.0
 gitbook_version:  3.2.3
