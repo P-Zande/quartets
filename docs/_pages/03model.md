@@ -17,3 +17,4 @@ As a visual representation of the game, we envision different agents sitting aro
 * Fixing the order of getting turns, i.e. instead of a player getting the turn after being asked something, we just go clockwise.
 * Eliminating the draw pile, which makes the "I do not have that card" announcement more informative. When that agent draws a card, there is no new uncertainty for other agents about whether that agent still does not have that card. It must be mentioned that some people do not play with a draw pile anyway, so it might not even be a simplification, just another version of the game.
 * Not allowing agents to ask others for cards they already have, so that more can be deduced from an agent asking a question.
+* If agents can ask for a card, they have to (aka they cannot skip a turn if not necessary)
