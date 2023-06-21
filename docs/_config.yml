@@ -16,7 +16,8 @@ gitbook_version:  3.2.3
 # bootstrap: use the remote theme for the site itself
 # remote_theme: P-Zande/jekyll-gitbook
 # remote_theme:     pages-themes/tactile@v0.2.0
-theme: minima
+# theme: minima #Deze werkt sws
+remote_theme: pages-themes/time-machine@v0.2.0
 
 toc:
   enabled: true
