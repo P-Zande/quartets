@@ -24,11 +24,14 @@ For this project we used Public Announcement logic. Every time an agent asks ano
 
 BLABLA LOGIC SYMBOLS
 
-negation: $$\neg$$  ¬
-implies: $$\rightarrow$$
-twee kanten implies: $\leftrightarrow$
-or: $\vee$ ∨
-and: $\wedge$  ∧
-dinges: $\vdash$
-andere kant op dinges: $\dashv$
-modeldinges: $\models$ 
+negation: ¬
+implies: →
+twee kanten implies: ↔
+
+or: ∨
+and: ∧
+exclusive or: ⊕
+
+dinges: ⊢
+andere kant op dinges: ⊣
+modeldinges: ⊨
