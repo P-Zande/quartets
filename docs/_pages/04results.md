@@ -7,7 +7,6 @@ layout: page
 permalink: /results
 ---
 
-
 Test om te kijken of we plaatjes kunnen toevoegen:
 
 ![Resultaten](./assets/images/resultaten.jpg)
@@ -16,4 +15,4 @@ Test om te kijken of we plaatjes kunnen toevoegen:
 
 Eerdere turns geeft bijna gegarandeerd meer betere results. 
 
-randomStrategy < ownerStrategy
+randomStrategy < ownerStrategy (offensive en defensive weten we nog niet)
