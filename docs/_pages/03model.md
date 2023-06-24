@@ -24,8 +24,8 @@ For this project we used Public Announcement logic. Every time an agent asks ano
 
 BLABLA LOGIC SYMBOLS
 
-negation: $\neg$
-implies: $\rightarrow$
+negation: $$\neg$$
+implies: $$\rightarrow$$
 twee kanten implies: $\leftrightarrow$
 or: $\vee$
 and: $\wedge$
