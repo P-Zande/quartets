@@ -28,7 +28,7 @@ The owner strategy is a more advanced strategy. The agent starts by asking for a
 
 The defensive strategy starts the same as the owner strategy, with asking for all the cards it is certain about who has that specific card. After that, it looks at which card it needs the most. If there is a set of cards where the agent only needs one more card to complete it, it will choose to ask for that card from an agent of which it knows that it could possibly have that card (chosen randomly from the list of possible owners). If there are multiple sets of cards the agent only needs one more of, it looks at which of those cards it is least uncertain about, so which of the cards has the smallest number of possible owners. If there is no set the agent only needs one more card of, it will ask for a card from a set where it needs two of, using the same rules as for needing one card.
 
-The offensive strategy looks at which cards other agents still need, instead of looking for completing an agents own set.
+The aggressive strategy looks at which cards other agents still need, instead of looking for completing an agents own set. It follows almost the same strategy as the defensive strategy, however, instead of looking at which card it needs the most itself, it tries to make sure the agent with the highest score is 'attacked'. BLABLA
 
 
 ## Logic
