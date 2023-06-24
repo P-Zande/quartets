@@ -71,3 +71,4 @@ plugins:
   - jekyll-readme-index
   - jemoji
   - jekyll-remote-theme
+  - jekyll-seo-tag
