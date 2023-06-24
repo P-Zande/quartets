@@ -8,3 +8,6 @@ permalink: /discussion
 ---
 
 # Blabla we zijn geweldig
+
+
+Maybe more realistic results when the askee gets the turn instead of clockwise turns?
