@@ -32,15 +32,9 @@ To represent the relevant objects of the game itself, we have created the follow
 ### Knowledge representation
 
 To represent the knowledge of an agent about the state of the game, we use the following representations:
-
-
-
-## Simplifications
-We have made some simplifications to the game mechanics and setup. To ensure the number of possible states does not explode, we have limited the number of players and card sets to NOG EVEN INVULLEN. 
-Other simplifications include fixing the order of getting turns. In the original game, the agent that is asked a question (and is not in possession of the asked card) can then ask some other agent for a card. We made sure to just go clockwise, where the agents are always in the same order. Lastly, in the original game there is a draw pile, which we eliminated. This allows the agents to deduce more information from the announcement that a given agent does not have a given card. Whenever that agent would draw from the pile, there would be uncertainty once again about whether that agent has the given card.
-It must be mentioned that some people do not play with a draw pile anyway, so it might not even be a simplification, just another version of the game. 
-
-Apart from the game mechanics, we also simplified some of the rules. Firstly, agents are not allowed to ask others for cards they already have in possession. This ensures there can be more information deduced from agents that ask a question. Secondly, players are not allowed to skip turns. This means that agents always have to ask for a card whenever they can.
+* Fact: a fact contains a simple piece of knowledge about whether a specific agent does or does not have a specific card.
+* Disjunction: a disjunction contains a collection of facts of which at least one must be true. This is used to represent the statement that an agent has at least one of a given set of cards.
+* ExclusiveOr: an ExclusiveOr contains a collection of fact of which exactly one must be true. This is used to represent the statement that a given card can be owned by any agents in a given set, but only one agent can own it.
 
 
 ## Strategies
@@ -67,26 +61,9 @@ The defensive strategy begins by identifying and requesting all the cards that t
 The aggressive strategy starts the same way as the owner and defensive strategy, by identifying and requesting all the cards that the agent is certain about who possesses them. Then, the agent will identify the agent who forms ``biggest threat'' to win the game and will requests cards from that agent, as long as that agent could possess cards the current agent can ask for. The strategy prioritizes requesting cards which the best-scoring agent is most likely to have, that is, cards for which the fewest number of agents have the possibility of possessing. If the top-scoring agent cannot have any card that the current agent can ask for, the second-highest agent will be asked instead, et cetera.
 
 
-## Logic
-For this project we used Public Announcement logic. There is no private communication between agents. Thus, when an agent asks another agent for a card, all agents hear this and it can thus be modelled as a public announcement. Similarly, when an agent states it does not have a certain card, or when it states it does have a card and the card is given to the asking agent, public announcements are made.
-After each announcement, all agents update their knowledge base to what they now know. 
+## State changes
 
-We can use the following to describe the kinds of knowledge that an agent can have:
-
-* The statement that agent 1 knows that agent 2 has card A from set X can be described as K<sub>1</sub> H<sub>2</sub>X<sub>A</sub>, where the formula H<sub>i</sub> &phi; operator indicates that agent 2 has object &phi;.
-* The statement that agent 1 knows that card A from set X is owned by either agent 2 or agent 3 can be described as K<sub>1</sub> (H<sub>2</sub>X<sub>A</sub> ∨ H<sub>3</sub>X<sub>A</sub>) ∧ K<sub>1</sub> &not; (H<sub>2</sub>X<sub>A</sub> &and; H<sub>3</sub>X<sub>A</sub>)
-* The statement that agent 1 knows that agent 2 has at least one of the cards A, B, C of set X can be described as K<sub>1</sub> (H<sub>2</sub>X<sub>A</sub> ∨ H<sub>2</sub>X<sub>B</sub> ∨ H<sub>2</sub>X<sub>C</sub>), or alternatively K<sub>1</sub> H<sub>2</sub>(X<sub>A</sub> ∨ X<sub>B</sub> ∨ X<sub>C</sub>).
-
-The three public announcements made during the game of Quartets can be formalized as follows:
-
-* "Agent 1 asks agent 2 for card A of set X" contains two statements: &not; H<sub>1</sub> X<sub>A</sub> and H<sub>1</sub>(X<sub>A</sub> &or; X<sub>B</sub> &or; X<sub>C</sub> &or; X<sub>D</sub>). These statements correspond to the simplification that an agent cannot ask for a card it already has, and to the rule that an agent can only ask for cards if it owns at least one of the cards of the corresponding set, respectively.
-* "Agent 2 does not have card A of set X" contains the statement &not; H<sub>2</sub> X<sub>A</sub>.
-* "Agent 2 has card A of set X and gives it to agent 1" contains the statement H<sub>2</sub>X<sub>A</sub> and the *change* H<sub>3</sub>X<sub>A</sub>. More on this later.
-
-
-
-
-BLABLA LOGIC SYMBOLS
+<!--
 
 negation: ¬
 implies: →
@@ -99,5 +76,6 @@ exclusive or: ⊕
 dinges: ⊢
 andere kant op dinges: ⊣
 modeldinges: ⊨
+-->
 
 

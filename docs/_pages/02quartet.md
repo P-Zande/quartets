@@ -29,12 +29,9 @@ When a player has completed a set, they place this set on the table in front of 
 
 A key difference between this game and the game 'Go Fish' is that, in this game, the player requests a specific card from a set, whereas in Go Fish, the player requests any and all cards from a specific set. This also has consequences for what knowledge can be deduced from the questions and answers. Players are allowed to ask others for cards they already have, in an effort to confuse others or to avoid others having knowledge about them.
 
-## Quartets & LAMAS
-Quartets seems like an easy game, however, if you look at the logic behind all of it, it becomes clear there is quite some involved. 
+## Simplifications
+We have made some simplifications to the game mechanics and setup. To ensure the number of possible states does not explode, we have limited the number of players and card sets to NOG EVEN INVULLEN. 
+Other simplifications include fixing the order of getting turns. In the original game, the agent that is asked a question (and is not in possession of the asked card) can then ask some other agent for a card. We made sure to just go clockwise, where the agents are always in the same order. Lastly, in the original game there is a draw pile, which we eliminated. This allows the agents to deduce more information from the announcement that a given agent does not have a given card. Whenever that agent would draw from the pile, there would be uncertainty once again about whether that agent has the given card.
+It must be mentioned that some people do not play with a draw pile anyway, so it might not even be a simplification, just another version of the game. 
 
-First of all, because everyone asks others about cards in a shared space, all announcements are made publicly. In the example before where Alice asked Bob about the 'Blij' card, Alice, Bob and any other players heard Alice ask this. 
-
-Higher-order knowledge comes into play when players start to think about what cards other players have in possession. Both Bob and Charlie know that, because Alice asked for a card in the 'Gevoelens' set, she must have at least one card of that set in her hand. Alice also knows that Bob and Charlie know that she has a card in that set, and both Bob and Charlie know that Alice knows that they know that she has a card of the 'Gevoelens' set, etc.
-It is therefore also common knowledge that the player who asked for a specific card is in possession of a card from that set. 
-
-For now, our research question will be if there is a downside to asking for a card you want to receive. This could be because others now know you already have at least one card of that set. 
+Apart from the game mechanics, we also simplified some of the rules. Firstly, agents are not allowed to ask others for cards they already have in possession. This ensures there can be more information deduced from agents that ask a question. Secondly, players are not allowed to skip turns. This means that agents always have to ask for a card whenever they can.
