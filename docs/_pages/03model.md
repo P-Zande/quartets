@@ -58,10 +58,11 @@ The owner strategy is a more advanced strategy. The agent starts by asking for a
 
 ### Defensive strategy
 
-The defensive strategy starts the same as the owner strategy, by asking for all the cards it is certain about who has that specific card. After that, it looks at which card will bring the agent closest to completing a set. If there is a set of cards where the agent only needs one more card to complete it, it will ask for that card from an agent which it knows could possibly have that card (chosen randomly from the list of possible owners). If there are multiple sets of cards the agent only needs one more of, it looks at which cards it is least uncertain about, so which of the cards has the smallest number of possible owners. If there is no set for which the agent only needs one more card, it will ask for a card from a set where it requires two more cards, using the same rules as for needing one card.
+The defensive strategy begins by identifying and requesting all the cards that the agent is certain about who possesses them, following the same approach as the owner strategy. Next, the agent assesses which card will bring it closest to completing a set. If there exists a set where the agent needs only one more card, it will randomly select an agent from the list of potential owners and ask for that specific card. In cases where the agent needs one more card for multiple sets, it prioritizes the cards it has the least uncertainty about, that is, the cards with the fewest possible owners. If there are no sets requiring only one more card, the agent will apply the same rules for sets that require two more cards and request a card accordingly.
 
 ### Aggressive strategy
-The aggressive strategy looks at which cards other agents still need, instead of looking for completing an agents own set. It follows almost the same strategy as the defensive strategy, however, instead of looking at which card it needs the most itself, it tries to make sure the agent with the highest score is 'attacked'. BLABLA
+
+The aggressive strategy starts the same way as the owner and defensive strategy, by identifying and requesting all the cards that the agent is certain about who possesses them. Then, the agent will identify the agent who forms ``biggest threat'' to win the game and will requests cards from that agent, as long as that agent could possess cards the current agent can ask for. The strategy prioritizes requesting cards which the best-scoring agent is most likely to have, that is, cards for which the fewest number of agents have the possibility of possessing.
 
 
 ## Logic
