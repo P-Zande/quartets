@@ -8,7 +8,14 @@ permalink: /discussion
 ---
 
 
+## Conclusion
+What we found in the results is that for some strategies it is advantageous to start first. There is a small advantage when using simple strategies to be able to ask for cards first. With more complicated strategies, this advantage was not seen as clearly.
 
+When putting the different strategies against each other, we found that the defensive strategy was the best. The random strategy was the worst followed by the owner strategy, which makes sense. It is interesting that the defensive strategy is the best. This could be because in this strategy the agent will ask for cards that are most likely to help the agents complete a set. This makes this strategy the most focused on winning. The aggressive strategy is also good, but its aim is to take cards away from agents with the highest scores, which doesn't always help the agent win.
+
+When comparing the advantage of starting to the disadvantage of using a slightly worse strategy, we found that the strategy matters more than the play order. This means that even though starting can give a slight advantage, it's not enough of an advantage if the other player is simply better.
+
+The answer to our research question is that the defensive strategy gives the highest chance to win and play order influences the chance to win slightly, but this is only noticable when every player uses exactly the same strategy.
 
 
 ## Limitations and future work
