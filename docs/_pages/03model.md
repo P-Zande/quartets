@@ -10,12 +10,12 @@ permalink: /model
 # Dit moet nog in 'wat we hebben gedaan taal' (en er moet in wat we echt hebben gedaan)
 
 ## Game implementation
-We have modelled the game in Python 3 using the MESA package. This package allows to easily model multi-agent environments.
+We have modelled the game in Python 3 using the MESA package. This package allows us to easily model multi-agent environments.
 
 
 ### Agent representation
 
-In the implementation, each player is represented by an instance of the QuartetAgent class. This class encapsulates the attributes and behaviours of a player in the game. It contains the following key components:
+In our implementation, each player is represented by an instance of the QuartetAgent class. This class encapsulates the attributes and behaviours of a player in the game. It contains the following key components:
 * Hand: an object containing all quartet groups and cards.
 * Score: the current number of completed quartet sets of the agent
 * Strategy: the strategy that the current agent uses to choose the questions it asks.
@@ -37,19 +37,30 @@ To represent the knowledge of an agent about the state of the game, we use the f
 
 ## Simplifications
 We have made some simplifications to the game mechanics and setup. To ensure the number of possible states does not explode, we have limited the number of players and card sets to NOG EVEN INVULLEN. 
-Other simplifications include fixing the order of getting turns. In the original game, the agent that is asked a question (and is not in possession of the asked card) can then ask some other agent for a card. We made sure to just go clockwise, where the agents are always in the same order. Lastly, in the original game there is a draw pile, which we eliminated. This makes the "I do not have that card" announcement more informative, as when an agent can draw cards from a draw pile, there is still uncertainty for other agents about whether that agent has that card. DIT IS EEN BEEEEETJE EEN VAGE ZIN.
+Other simplifications include fixing the order of getting turns. In the original game, the agent that is asked a question (and is not in possession of the asked card) can then ask some other agent for a card. We made sure to just go clockwise, where the agents are always in the same order. Lastly, in the original game there is a draw pile, which we eliminated. This allows the agents to deduce more information from the announcement that a given agent does not have a given card. Whenever that agent would draw from the pile, there would be uncertainty once again about whether that agent has the given card.
 It must be mentioned that some people do not play with a draw pile anyway, so it might not even be a simplification, just another version of the game. 
 
 Apart from the game mechanics, we also simplified some of the rules. Firstly, agents are not allowed to ask others for cards they already have in possession. This ensures there can be more information deduced from agents that ask a question. Secondly, players are not allowed to skip turns. This means that agents always have to ask for a card whenever they can.
 
 
 ## Strategies
-Agents using the random strategy use barely any logic. They ask for a random card they still need (and are allowed to ask for) from a random other agent. This is done without considering whether or not that other agent is a possible owner of the card.
 
-The owner strategy is a more advanced strategy. The agent starts by asking for all the cards it is allowed to ask for and is certain of which of the other agents is in posession of that card. When that is done and all certain cards are obtained, the agent starts looking in its knowledge base to see if it knows which of the agents could possibly have a card they are looking for. It then randomly chooses one of the cards it still needs and asks it from one of the agent it knows might posess it. 
+We have implemented four different strategies that the agents can use to determine what card to ask for and to whom. All strategies take into account the rule that a card can only be requested when the agent already has at least one card of the corresponding quartet group.
 
-The defensive strategy starts the same as the owner strategy, with asking for all the cards it is certain about who has that specific card. After that, it looks at which card it needs the most. If there is a set of cards where the agent only needs one more card to complete it, it will choose to ask for that card from an agent of which it knows that it could possibly have that card (chosen randomly from the list of possible owners). If there are multiple sets of cards the agent only needs one more of, it looks at which of those cards it is least uncertain about, so which of the cards has the smallest number of possible owners. If there is no set the agent only needs one more card of, it will ask for a card from a set where it needs two of, using the same rules as for needing one card.
+### Random strategy
+The random strategy is the most simple one. They ask for a random card they still need from a random other agent. It does not consider any knowledge as to who can or cannot be the owner of that card.
 
+
+### Owner strategy
+The owner strategy is a more advanced strategy. The agent starts by asking for all the cards of which the agent knows who possesses that card. When that is done and all ``certain'' cards are obtained, the agent then randomly chooses one of the cards it still needs and asks it from one of the agent it knows could possess it. 
+<!-- the agent starts looking in its knowledge base to see if it knows which of the agents could possibly have a card they are looking for.  -->
+
+
+### Defensive strategy
+
+The defensive strategy starts the same as the owner strategy, by asking for all the cards it is certain about who has that specific card. After that, it looks at which card will bring the agent closest to completing a set. If there is a set of cards where the agent only needs one more card to complete it, it will ask for that card from an agent which it knows could possibly have that card (chosen randomly from the list of possible owners). If there are multiple sets of cards the agent only needs one more of, it looks at which cards it is least uncertain about, so which of the cards has the smallest number of possible owners. If there is no set for which the agent only needs one more card, it will ask for a card from a set where it requires two more cards, using the same rules as for needing one card.
+
+### Aggressive strategy
 The aggressive strategy looks at which cards other agents still need, instead of looking for completing an agents own set. It follows almost the same strategy as the defensive strategy, however, instead of looking at which card it needs the most itself, it tries to make sure the agent with the highest score is 'attacked'. BLABLA
 
 
