@@ -10,7 +10,29 @@ permalink: /model
 # Dit moet nog in 'wat we hebben gedaan taal' (en er moet in wat we echt hebben gedaan)
 
 ## Game implementation
-As a visual representation of the game, we envision different agents sitting around a table, each holding their cards. All completed sets are shown on the table. To implement this, we have created 'agent' objects that have their own knowledge about the game. All agents know of the existence of every card, but agents might not know where a certain card is at a certain point in time. Whenever a public announcement is made (in the form of an agent asking a question and another agent responding), each agent on the table updates their knowledge about the card and its location.
+We have modelled the game in Python 3 using the MESA package. This package allows to easily model multi-agent environments.
+
+
+### Agent representation
+
+In the implementation, each player is represented by an instance of the QuartetAgent class. This class encapsulates the attributes and behaviours of a player in the game. It contains the following key components:
+* Hand: an object containing all quartet groups and cards.
+* Score: the current number of completed quartet sets of the agent
+* Strategy: the strategy that the current agent uses to choose the questions it asks.
+
+### Object representation
+
+To represent the relevant objects of the game itself, we have created the following objects:
+
+* QuartetCard: This represents an individual card. It contains the name of the card, as well as the group of cards it belongs to. In our implementation, each agent has an instance of each card in the game. The card contains an attribute to register whether or not the agent currently owns this card. 
+* QuartetGroup: This represents a single Quartet group, consisting of four cards. It also contains all the knowledge the agent has on who owns what card in the group.
+* Hand: This represents the collection of all QuartetGroups that an agent has. The agent interacts with its cards and its knowledge about the location of the other cards via this object.
+
+
+### Knowledge representation
+
+To represent the knowledge of an agent about the state of the game, we use the following representations:
+
 
 
 ## Simplifications
