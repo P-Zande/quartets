@@ -34,6 +34,8 @@ The aggressive strategy looks at which cards other agents still need, instead of
 ## Logic
 For this project we used Public Announcement logic. Every time an agent asks another agent for a card this is a public announcement. Each time an agent responds with either that they do have that card and proceed to give it to the other agent, or that they do not have that card, it is a public announcement. After each announcement, all agents update their knowledge base to what they now know. 
 
+DIT MOET NOG HERSCHREVEN, DIT IS EEN NOTE VAN TIJDENS PROGRAMMEREN: We use chance in the strategies. This is not necessarily very logic, but because it is a separate thing from the knowledge base it should be okay. (We use logic to make the knowledge base, and then use some chance to be able to strategise using that knowledge)
+
 BLABLA LOGIC SYMBOLS
 
 negation: ¬
