@@ -7,7 +7,6 @@ layout: page
 permalink: /model
 ---
 
-# Dit moet nog in 'wat we hebben gedaan taal' (en er moet in wat we echt hebben gedaan)
 
 ## Game implementation
 We have modelled the game in Python 3 using the MESA package. This package allows us to easily model multi-agent environments.
@@ -61,7 +60,16 @@ The defensive strategy begins by identifying and requesting all the cards that t
 The aggressive strategy starts the same way as the owner and defensive strategy, by identifying and requesting all the cards that the agent is certain about who possesses them. Then, the agent will identify the agent who forms ``biggest threat'' to win the game and will requests cards from that agent, as long as that agent could possess cards the current agent can ask for. The strategy prioritizes requesting cards which the best-scoring agent is most likely to have, that is, cards for which the fewest number of agents have the possibility of possessing. If the top-scoring agent cannot have any card that the current agent can ask for, the second-highest agent will be asked instead, et cetera.
 
 
-## State changes
+## Knowledge updates
+
+At the start of the run, each agent gets some cards. For all other cards, it add an ExclusiveOr object to its knowledge base, which represents that for each card, it must be owned by one of the other agents.
+
+After every public announcement, each agent updates the knowledge base of the corresponding quartet group. The specific shape of the announcements is discussed in section Logic. Whenever an agent learns a new Fact, it iterates over all pieces of knowledge it already has and updates them accordingly. If the new fact satisfies a Disjunction or ExclusiveOr, this knowledge can be removed as it no longer contains additional information. If it makes a certain fact in a Disjunction or ExclusiveOr impossible, the agent knows that one of the other facts then must be true. The fact that has been made impossible will be removed from the Disjunction or ExclusiveOr. If it makes another Fact impossible, that means that the new Fact indicates a change of ownership of the cards. The old fact will be deleted. Additionally, if an agent learns that a specific agent owns a card, it will also add to its knowledge base the facts that all other agents do not own that card.
+
+If one of the Disjunction or ExclusiveOr objects eventually contains only a single fact, we can conclude that that given fact must be true; all other facts that were previously part of the object have been deemed to be impossible. This new fact is the also added to the knowledge base, using the protocol described above. 
+
+
+
 
 <!--
 
