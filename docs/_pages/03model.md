@@ -47,6 +47,8 @@ Apart from the game mechanics, we also simplified some of the rules. Firstly, ag
 
 We have implemented four different strategies that the agents can use to determine what card to ask for and to whom. All strategies take into account the rule that a card can only be requested when the agent already has at least one card of the corresponding quartet group.
 
+Some strategies use a very rudimentary form of probability estimation to determine what card to ask for. For example, according to agent 1, agent 2 is more likely to have card A than card B, because only one other agent than agent 2 could have card A, whereas card B could be owned by one of all 4 other agents. This kind of probability estimation can improve the chances of an agent to win. However, note that an agent's beliefs are not explicitly modelled, and all knowledge in an agent's knowledge base must be true.
+
 ### Random strategy
 The random strategy is the most simple one. They ask for a random card they still need from a random other agent. It does not consider any knowledge as to who can or cannot be the owner of that card.
 
@@ -62,13 +64,27 @@ The defensive strategy begins by identifying and requesting all the cards that t
 
 ### Aggressive strategy
 
-The aggressive strategy starts the same way as the owner and defensive strategy, by identifying and requesting all the cards that the agent is certain about who possesses them. Then, the agent will identify the agent who forms ``biggest threat'' to win the game and will requests cards from that agent, as long as that agent could possess cards the current agent can ask for. The strategy prioritizes requesting cards which the best-scoring agent is most likely to have, that is, cards for which the fewest number of agents have the possibility of possessing.
+The aggressive strategy starts the same way as the owner and defensive strategy, by identifying and requesting all the cards that the agent is certain about who possesses them. Then, the agent will identify the agent who forms ``biggest threat'' to win the game and will requests cards from that agent, as long as that agent could possess cards the current agent can ask for. The strategy prioritizes requesting cards which the best-scoring agent is most likely to have, that is, cards for which the fewest number of agents have the possibility of possessing. If the top-scoring agent cannot have any card that the current agent can ask for, the second-highest agent will be asked instead, et cetera.
 
 
 ## Logic
-For this project we used Public Announcement logic. Every time an agent asks another agent for a card this is a public announcement. Each time an agent responds with either that they do have that card and proceed to give it to the other agent, or that they do not have that card, it is a public announcement. After each announcement, all agents update their knowledge base to what they now know. 
+For this project we used Public Announcement logic. There is no private communication between agents. Thus, when an agent asks another agent for a card, all agents hear this and it can thus be modelled as a public announcement. Similarly, when an agent states it does not have a certain card, or when it states it does have a card and the card is given to the asking agent, public announcements are made.
+After each announcement, all agents update their knowledge base to what they now know. 
 
-DIT MOET NOG HERSCHREVEN, DIT IS EEN NOTE VAN TIJDENS PROGRAMMEREN: We use chance in the strategies. This is not necessarily very logic, but because it is a separate thing from the knowledge base it should be okay. (We use logic to make the knowledge base, and then use some chance to be able to strategise using that knowledge)
+We can use the following to describe the kinds of knowledge that an agent can have:
+
+* The statement that agent 1 knows that agent 2 has card A from set X can be described as K<sub>1</sub> H<sub>2</sub>X<sub>A</sub>, where the formula H<sub>i</sub> &phi; operator indicates that agent 2 has object &phi;.
+* The statement that agent 1 knows that card A from set X is owned by either agent 2 or agent 3 can be described as K<sub>1</sub> (H<sub>2</sub>X<sub>A</sub> ∨ H<sub>3</sub>X<sub>A</sub>) ∧ K<sub>1</sub> &not; (H<sub>2</sub>X<sub>A</sub> &and; H<sub>3</sub>X<sub>A</sub>)
+* The statement that agent 1 knows that agent 2 has at least one of the cards A, B, C of set X can be described as K<sub>1</sub> (H<sub>2</sub>X<sub>A</sub> ∨ H<sub>2</sub>X<sub>B</sub> ∨ H<sub>2</sub>X<sub>C</sub>), or alternatively K<sub>1</sub> H<sub>2</sub>(X<sub>A</sub> ∨ X<sub>B</sub> ∨ X<sub>C</sub>).
+
+The three public announcements made during the game of Quartets can be formalized as follows:
+
+* "Agent 1 asks agent 2 for card A of set X" contains two statements: &not; H<sub>1</sub> X<sub>A</sub> and H<sub>1</sub>(X<sub>A</sub> &or; X<sub>B</sub> &or; X<sub>C</sub> &or; X<sub>D</sub>). These statements correspond to the simplification that an agent cannot ask for a card it already has, and to the rule that an agent can only ask for cards if it owns at least one of the cards of the corresponding set, respectively.
+* "Agent 2 does not have card A of set X" contains the statement &not; H<sub>2</sub> X<sub>A</sub>.
+* "Agent 2 has card A of set X and gives it to agent 1" contains the statement H<sub>2</sub>X<sub>A</sub> and the *change* H<sub>3</sub>X<sub>A</sub>. More on this later.
+
+
+
 
 BLABLA LOGIC SYMBOLS
 
