@@ -8,7 +8,7 @@ permalink: /experiment
 ---
 
 ## Experimental Setup
-We performed multiple experiments. For every experiment we used a setup with four agents. We made them play 1000 games for every experiment.
+We performed multiple experiments. For every experiment we used a setup with four agents. We made them play 1000 games for every experiment. We measured the amount of games won over the course of these games.
 
 In the first experiment, we compared the four different strategies to each other. For every game, the four different agents each use a different strategy. Which agent uses which strategy changes every round, so that the play order does not influence this first experiment.
 
